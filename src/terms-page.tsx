@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import { Dock, type DockTheme } from './dock'
-import { FooterScene } from './footer-scene'
+import { Skiper39 } from './components/ui/skiper-ui/skiper39'
+import './skiper39-registry.css'
 
 function resolveInitialDockTheme(): DockTheme {
   if (typeof window === 'undefined') return 'dark'
@@ -76,7 +77,7 @@ export function TermsPage() {
           <div className="copyright">
             <strong>© Copyright</strong>{new Date().getFullYear()}&nbsp;&nbsp;&nbsp; Findmeajob
           </div>
-          <FooterScene />
+          <Skiper39 />
         </footer>
       </main>
     </>

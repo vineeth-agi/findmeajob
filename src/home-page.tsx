@@ -3,7 +3,8 @@ import type { MouseEvent as ReactMouseEvent, RefObject } from 'react'
 import { jobPath, publicJobId, type Job, type JobPageData } from './shared/jobs'
 import { AskAi } from './ai-chat'
 import { Dock, type DockTheme } from './dock'
-import { FooterScene } from './footer-scene'
+import { Skiper39 } from './components/ui/skiper-ui/skiper39'
+import './skiper39-registry.css'
 
 const jobTags = (job: Job) => [...job.locations.slice(0, 1), ...job.compensation.slice(0, 1)].filter((tag) => tag.trim() && !/^\[object object\]$/i.test(tag.trim()))
 
@@ -60,7 +61,7 @@ function Hero() {
   const quote = HERO_QUOTES[quoteIndex]
   return <header>
     <div className="mast"><a className="wordmark" href="#top" aria-label="Findmeajob home">Findme<br/>ajob</a><a className="submit" href="https://github.com/vineeth-agi/findmeajob" target="_blank" rel="noopener noreferrer">Open source ↗</a></div>
-    <div className="blueprint" aria-hidden="true"><img className="hero-user-art" src="/hero-search.svg" alt="" width="574" height="661" decoding="async" draggable="false"/><span className="hero-session">OPEN ROLES / 20000+</span><span className="count"><span className="quote-line" key={quoteIndex}>{quote.text}</span><span className="quote-author quote-line" key={`${quoteIndex}-author`}>— {quote.author}</span></span></div>
+    <div className="blueprint" aria-hidden="true"><img className="hero-user-art" src="/v4fW233QWO.svg" alt="" width="574" height="661" decoding="async" draggable="false"/><span className="hero-session">OPEN ROLES / 20000+</span><span className="count"><span className="quote-line" key={quoteIndex}>{quote.text}</span><span className="quote-author quote-line" key={`${quoteIndex}-author`}>— {quote.author}</span></span></div>
   </header>
 }
 
@@ -134,7 +135,7 @@ function Footer() {
     <a className="wordmark" href="#top">Findme<br/>ajob</a>
     <div className="strap"><a href="https://x.com/vineeth_agi" target="_blank" rel="noopener" style={{ color: 'inherit', textDecoration: 'none' }}>Built by Vineeth ↗</a></div>
     <div className="copyright"><strong>© Copyright</strong>{new Date().getFullYear()}&nbsp;&nbsp;&nbsp; Findmeajob</div>
-    <FooterScene/>
+    <Skiper39/>
   </footer>
 }
 
