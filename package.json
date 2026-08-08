@@ -1,0 +1,44 @@
+{
+  "name": "findmeajob",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.15.1",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "tsx --test server/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.server.json",
+    "security:audit": "pnpm audit --prod --audit-level high",
+    "server": "tsx server/index.ts",
+    "deploy": "pnpm run build && wrangler deploy --config dist/server/wrangler.json",
+    "deploy:cloudflare": "pnpm run build && wrangler deploy --config dist/server/wrangler.json",
+    "cf-typegen": "wrangler types",
+    "db:migrate:local": "wrangler d1 migrations apply AUTH_DB --local",
+    "db:migrate:remote": "wrangler d1 migrations apply AUTH_DB --remote"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.0",
+    "@tanstack/react-router": "^1.170.23",
+    "@tanstack/react-start": "^1.168.40",
+    "better-auth": "1.6.26",
+    "hono": "^4.9.7",
+    "motion": "^13.0.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.51.1",
+    "@types/node": "^22.15.21",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.2",
+    "tsx": "^4.23.11",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2",
+    "wrangler": "^4.120.0"
+  }
+}

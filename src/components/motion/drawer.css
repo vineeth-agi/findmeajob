@@ -1,0 +1,5 @@
+.fmj-drawer-root{position:fixed;inset:0;z-index:95;isolation:isolate;pointer-events:none;overscroll-behavior:none}
+.fmj-drawer-backdrop{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;cursor:default;background:transparent;backdrop-filter:none;pointer-events:auto;touch-action:none}
+.fmj-drawer-panel{position:absolute;inset-block:0;display:flex;flex-direction:column;max-width:100vw;background:var(--gray-100,#101011);box-shadow:0 20px 80px #000b;outline:none;pointer-events:auto;overscroll-behavior:contain}
+.fmj-drawer-panel-right{right:0;border-left:1px solid var(--gray-75,#48474b)}
+.fmj-drawer-panel-left{left:0;border-right:1px solid var(--gray-75,#48474b)}

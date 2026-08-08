@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574 661" role="img" aria-labelledby="title description">
+  <title id="title">Person searching for jobs</title>
+  <desc id="description">A monochrome geometric illustration of a person using a laptop.</desc>
+  <g fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+    <circle cx="232" cy="128" r="55" fill="#666" stroke="#555"/>
+    <path d="M184 112c16-49 85-61 111-16-35-7-62 1-84 25-10 11-18 8-27-9Z" fill="#888" stroke="#666"/>
+    <path d="M212 144c12 10 25 12 39 4"/>
+    <path d="M199 184c-44 38-67 105-64 202l146 5c19-97 7-160-36-202" fill="#666" stroke="#555"/>
+    <path d="M156 245c-31 41-45 97-42 168M261 241c31 41 43 88 38 142"/>
+    <path d="m256 307 156 4-62 118-159-2Z" fill="#555" stroke="#444"/>
+    <path d="M350 429h103M171 430h179"/>
+    <path d="M176 431v147M332 432l-37 146"/>
+    <path d="M132 579h85M262 579h86" stroke-width="6"/>
+    <path d="M117 412h84M111 417h90" stroke="#888" stroke-width="7"/>
+    <circle cx="324" cy="367" r="8" fill="#777" stroke="none"/>
+  </g>
+</svg>

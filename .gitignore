@@ -1,0 +1,24 @@
+# Dependencies and build output
+node_modules/
+dist/
+.wrangler/
+.tanstack/
+
+# Local credentials and environment files
+.dev.vars
+.env
+.env.*
+!.env.example
+
+# Local-only operator and maintenance scripts
+scripts/
+
+# Local logs and QA captures
+*.log
+qa-*.png
+eval-*.png
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/

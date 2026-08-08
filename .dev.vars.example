@@ -1,0 +1,13 @@
+VOYAGE_API_KEY=replace-me
+OPENAI_API_KEY=replace-me
+BETTER_AUTH_SECRET=replace-with-at-least-32-random-characters
+BETTER_AUTH_URL=http://localhost:4173
+GOOGLE_CLIENT_ID=replace-me.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=replace-me
+# BETTER_AUTH_TRUSTED_ORIGINS=https://staging.example.com
+# Optional bot verification. Set TURNSTILE_REQUIRED=true in wrangler.jsonc when configured.
+# TURNSTILE_SECRET_KEY=replace-me
+# ALLOWED_ORIGINS=https://staging.example.com
+# APPLY_URL_HOSTS=greenhouse.io,lever.co,ashbyhq.com
+# JOB_TABLE=jobs
+# VOYAGE_EMBED_MODEL=voyage-multimodal-3.5

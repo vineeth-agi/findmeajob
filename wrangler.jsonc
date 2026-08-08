@@ -1,0 +1,81 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "designengineer-jobs",
+  "main": "src/server.ts",
+  "compatibility_date": "2026-08-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    { "pattern": "findmeajob.dev", "custom_domain": true }
+  ],
+  "vars": {
+    "VOYAGE_EMBED_MODEL": "voyage-multimodal-3.5",
+    "OPENAI_AI_MODEL": "gpt-5.6-luna",
+    "SEARCH_ENABLED": "true",
+    "TURNSTILE_REQUIRED": "false"
+  },
+  "secrets": {
+    "required": ["VOYAGE_API_KEY", "OPENAI_API_KEY", "BETTER_AUTH_SECRET", "BETTER_AUTH_URL", "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"]
+  },
+  "ratelimits": [
+    {
+      "name": "READ_RATE_LIMITER",
+      "namespace_id": "1001",
+      "simple": { "limit": 120, "period": 60 }
+    },
+    {
+      "name": "PUBLIC_JOB_RATE_LIMITER",
+      "namespace_id": "1004",
+      "simple": { "limit": 75, "period": 60 }
+    },
+    {
+      "name": "JOB_LIST_RATE_LIMITER",
+      "namespace_id": "1005",
+      "simple": { "limit": 30, "period": 60 }
+    },
+    {
+      "name": "JOB_DETAIL_RATE_LIMITER",
+      "namespace_id": "1006",
+      "simple": { "limit": 60, "period": 60 }
+    },
+    {
+      "name": "SEARCH_RATE_LIMITER",
+      "namespace_id": "1002",
+      "simple": { "limit": 10, "period": 60 }
+    },
+    {
+      "name": "AI_RATE_LIMITER",
+      "namespace_id": "1003",
+      "simple": { "limit": 6, "period": 60 }
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "JOBSTORE",
+      "database_name": "findmeajob-db",
+      "database_id": "ae0bdfeb-6e92-45c7-aaef-36d1b779d35b",
+      "remote": true
+    },
+    {
+      "binding": "AUTH_DB",
+      "database_name": "findmeajob-db",
+      "database_id": "ae0bdfeb-6e92-45c7-aaef-36d1b779d35b",
+      "remote": true
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "COMPANY_LOGOS",
+      "bucket_name": "findmeajob-logos"
+    }
+  ],
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "findmeajob-job-embeddings"
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1
+  }
+}
