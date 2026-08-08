@@ -117,7 +117,7 @@ function Editorial() {
     </section>
     <section className="section discourse" id="support">
       <h2>Support</h2>
-      <p>Donate - <a href="https://www.thankyouverymuch.co/zerolatency" target="_blank" rel="noopener">https://www.thankyouverymuch.co/zerolatency</a> ( To support this project )</p>
+      <p>Donate - <a href="https://www.thankyouverymuch.co/zerolatency" target="_blank" rel="noopener noreferrer">Click here</a> ( To support this project )</p>
     </section>
     <section className="section reading" id="links">
       <h2>Links</h2>
