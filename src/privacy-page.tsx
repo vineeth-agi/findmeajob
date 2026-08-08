@@ -61,17 +61,22 @@ export function PrivacyPage() {
           </section>
 
           <section className="section">
-            <h2>3. Other Information</h2>
+            <h2>3. Analytics</h2>
+            <p>On the production website, we use OpenPanel for cookieless analytics. It processes page URLs and referrers, visit and outgoing-link events, browser, operating-system and device details, and approximate location derived from the request IP address. OpenPanel states that it discards raw IP addresses and rotates anonymous device identifiers daily. We do not enable session replay or send signed-in account details to OpenPanel. You can read <a className="plain-link" href="https://openpanel.dev/privacy" target="_blank" rel="noopener noreferrer">OpenPanel&apos;s privacy policy</a> for more information.</p>
+          </section>
+
+          <section className="section">
+            <h2>4. Other Information</h2>
             <p>We do not sell user personal data or use intrusive third-party advertising trackers. Basic security and operational records may be processed to prevent abuse and keep the service reliable.</p>
           </section>
 
           <section className="section">
-            <h2>4. Direct External Applications</h2>
+            <h2>5. Direct External Applications</h2>
             <p>When you click on job listings, you are routed directly to official company career pages. Once on an external site, your interaction is governed by that company&apos;s respective privacy policy.</p>
           </section>
 
           <section className="section">
-            <h2>5. Contact &amp; Support</h2>
+            <h2>6. Contact &amp; Support</h2>
             <p>If you have any questions or feedback regarding our privacy practices, you can reach out via GitHub or Twitter/X.</p>
           </section>
         </article>

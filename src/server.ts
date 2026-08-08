@@ -51,7 +51,7 @@ const secureResponse = (response: Response, request: Request, api: boolean) => {
     headers.set('Content-Security-Policy', "default-src 'none'; frame-ancestors 'none'; base-uri 'none'")
   } else {
     headers.set('Content-Security-Policy', "base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'")
-    headers.set('Content-Security-Policy-Report-Only', "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-src https://challenges.cloudflare.com; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'")
+    headers.set('Content-Security-Policy-Report-Only', "default-src 'self'; script-src 'self' 'unsafe-inline' https://openpanel.dev https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.openpanel.dev; frame-src https://challenges.cloudflare.com; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'")
   }
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers })
 }

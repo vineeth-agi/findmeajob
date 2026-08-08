@@ -10,6 +10,7 @@ Production site: [findmeajob.dev](https://findmeajob.dev)
 - Semantic search powered by Voyage embeddings and Cloudflare Vectorize.
 - Google-only sign-in through Better Auth.
 - Ask AI job search powered by a server-side GPT-5.6 Luna integration.
+- Cookieless production analytics through OpenPanel, with session replay disabled.
 - Validated application links and company logos served through the Worker.
 - Layered rate limits, edge caching, security headers, crawler controls, and a 200-successful-answer daily AI allowance.
 
@@ -79,6 +80,8 @@ Copy `.dev.vars.example` for local development. Production values must be stored
 | `VITE_TURNSTILE_SITE_KEY` | Optional public Turnstile site key |
 
 Browser-supplied provider keys are not accepted. The Worker owns all job-catalog, logo, embedding, authentication, quota, and AI credentials.
+
+OpenPanel's browser SDK client ID is intentionally embedded in the production document because the browser must send it with analytics events. It is a public identifier, does not belong in `.dev.vars` or Cloudflare secrets, and must never be confused with an OpenPanel client secret. This application does not use or expose an OpenPanel client secret, does not identify signed-in users to OpenPanel, and leaves session replay disabled.
 
 ## Google sign-in
 

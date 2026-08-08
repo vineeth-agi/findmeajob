@@ -8,6 +8,18 @@ import {
 import { SOCIAL_IMAGE_META } from '../shared/seo'
 import '../styles.css'
 
+const OPENPANEL_CLIENT_ID = 'e9f7c500-a3cc-417a-a46d-127dd0924785'
+const OPENPANEL_BOOTSTRAP = `
+window.op=window.op||function(){var n=[];return new Proxy(function(){arguments.length&&n.push([].slice.call(arguments))},{get:function(t,r){return"q"===r?n:function(){n.push([r].concat([].slice.call(arguments)))}} ,has:function(t,r){return"q"===r}}) }();
+window.op('init', {
+  clientId: '${OPENPANEL_CLIENT_ID}',
+  trackScreenViews: true,
+  trackOutgoingLinks: true,
+  trackAttributes: true,
+  disabled: window.location.hostname !== 'findmeajob.dev',
+});
+`
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -47,6 +59,12 @@ function DocumentShell({ children }: Readonly<{ children: ReactNode }>) {
     <html lang="en">
       <head>
         <HeadContent />
+        {import.meta.env.PROD && (
+          <>
+            <script dangerouslySetInnerHTML={{ __html: OPENPANEL_BOOTSTRAP }} />
+            <script src="https://openpanel.dev/op1.js" defer async />
+          </>
+        )}
       </head>
       <body>
         {children}
